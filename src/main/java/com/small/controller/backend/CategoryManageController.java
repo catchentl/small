@@ -6,7 +6,6 @@ import com.small.common.ServerResponse;
 import com.small.pojo.User;
 import com.small.service.ICategoryService;
 import com.small.service.IUserService;
-import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,6 +89,7 @@ public class CategoryManageController {
             return ServerResponse.createByErrorMessage("无权限操作,需要管理员权限");
         }
     }
+
 
 
     /**
