@@ -37,6 +37,7 @@ public class User {
     }
 
     public User() {
+        super();
     }
 
     public Integer getId() {
@@ -52,7 +53,7 @@ public class User {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {
@@ -60,7 +61,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getEmail() {
@@ -68,7 +69,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
     }
 
     public String getPhone() {
@@ -76,7 +77,7 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public String getQuestion() {
@@ -84,7 +85,7 @@ public class User {
     }
 
     public void setQuestion(String question) {
-        this.question = question;
+        this.question = question == null ? null : question.trim();
     }
 
     public String getAnswer() {
@@ -92,7 +93,7 @@ public class User {
     }
 
     public void setAnswer(String answer) {
-        this.answer = answer;
+        this.answer = answer == null ? null : answer.trim();
     }
 
     public Integer getRole() {
