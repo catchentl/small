@@ -1,0 +1,47 @@
+maven环境隔离：
+新建对应的环境目录，公共部分留下
+
+环境隔离打包命令
+mvn clean package -Dmaven.test.skip=true -Pprod
+
+-Dmaven.test.skip=true   打包跳过测试目录
+
+-Pprod    打包那个环境   prod是隔离的环境名称
+
+<build>
+<resources>
+	<resource>
+		<directory>src/main/resources.${deploy.type}</directory>
+		<excludes>
+			<exclude>*.jsp</exclude>
+		</excludes>
+	</resource>
+	<resource>
+		<directory>src/main/resources</directory>
+	</resource>
+</resources>
+</build>
+
+<profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <deploy.type>dev</deploy.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>beta</id>
+            <properties>
+                <deploy.type>beta</deploy.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <deploy.type>prod</deploy.type>
+            </properties>
+        </profile>
+    </profiles>
