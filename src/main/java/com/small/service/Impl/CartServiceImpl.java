@@ -10,6 +10,7 @@ import com.small.dao.ProductMapper;
 import com.small.pojo.Cart;
 import com.small.pojo.Product;
 import com.small.service.ICartService;
+import com.small.service.IUserService;
 import com.small.util.BigDecimalUtil;
 import com.small.util.PropertiesUtil;
 import com.small.vo.CartProductVo;
