@@ -36,6 +36,7 @@ public class UserController {
     @RequestMapping(value = "login.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session, HttpServletResponse httpServletResponse){
+
         ServerResponse<User> response =  iUserService.login(username,password);
         if (response.isSuccess()){
             CookUtil.writeLoginToken(httpServletResponse,session.getId());
@@ -175,6 +176,7 @@ public class UserController {
     @RequestMapping(value = "update_information.do",method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> update_information(HttpSession session,User user,HttpServletRequest httpServletRequest){
+
 //        User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
         String loginToken = CookUtil.readLoginToken(httpServletRequest);
         if (StringUtils.isEmpty(loginToken)){
