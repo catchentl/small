@@ -29,4 +29,8 @@ public interface OrderMapper {
 
 
     List<Order> selectAllOrder();
+
+    List<Order> selectOrderStatusByCreateTime(@Param("code") int code, @Param("date") String date);
+
+    void closeOrderByOrderId(Integer id);
 }
